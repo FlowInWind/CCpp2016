@@ -1,36 +1,46 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include <SFML/Audio/Music.hpp>
+#include "Texture.h"
+#include "Sprite.h"
+#include "Scene.h"
+#include "Sound.h"
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 900), "DemonstarXP");
-    while (window.isOpen())
+	Texture texture;
+	texture.load();
+
+	Scene* scene=new Scene;
+	sf::RenderWindow* window=scene->getWindow();
+
+	Sound::backmusic.play();
+
+
+    while (window->isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (window->pollEvent(event))
         {
+			window->setFramerateLimit(240);
             if (event.type == sf::Event::Closed)
-                window.close();
+                window->close();
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left) {
+                scene->left();
+            }
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right) {
+                scene->right();
+            }
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) {
+                scene->up();
+            }
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down) {
+                scene->down();
+            }
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+                scene->down();
+            }
         }
 
-		sf::Texture texture;
-		if (!texture.loadFromFile("background.jpg")){
-		}
-		sf::Sprite sprite;
-		sprite.setTexture(texture);
-		window.draw(sprite);
-		// load a 32x32 rectangle that starts at (10, 10)
-		sf::Texture planes;
-		if (!planes.loadFromFile("image.png"))
-		{
-		}
-		sf::Sprite plane;
-		plane.setTexture(planes);
-		plane.setPosition(sf::Vector2f(360, 820));
-		window.draw(plane);
-
-        window.display();
-    }
-
+		scene->display();
+	}
     return 0;
 }
