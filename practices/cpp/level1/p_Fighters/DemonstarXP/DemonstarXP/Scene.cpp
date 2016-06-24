@@ -22,8 +22,10 @@ void Scene::addbullet(Bullet* bullet){
 
 void Scene::display()
 {
-	this->window->draw(*this->background);
-	this->window->draw(*this->myplane);
+    for(auto &sprite : this->sprites){
+        sprite->heartBeat();
+        this->window->draw(*sprite);
+    }
 	this->window->display();
 }
 Scene* Scene::getScene()

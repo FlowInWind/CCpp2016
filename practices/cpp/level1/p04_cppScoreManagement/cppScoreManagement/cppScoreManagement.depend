@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1466750842 source:d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p04_cppscoremanagement\cppscoremanagement\src\student.cpp
+	"Student.h"
+
+1466750842 d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p04_cppscoremanagement\cppscoremanagement\include\student.h
+	<iostream>
+	<string>
+

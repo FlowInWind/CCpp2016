@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1466752837 source:d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\main.cpp
+	<iostream>
+	"Rect.h"
+	"Circle.h"
+
+1466752992 d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\include\rect.h
+
+1466752955 d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\include\shape.h
+
+1466752992 d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\include\circle.h
+
+1466752894 source:d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\src\circle.cpp
+	"Circle.h"
+	<iostream>
+
+1466752904 source:d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\src\rect.cpp
+	"Rect.h"
+	<iostream>
+
+1466751559 source:d:\softwares\ccpp\ccpp2016\practices\cpp\level1\p05_canvas\canvas\src\shape.cpp
+	"Shape.h"
+
